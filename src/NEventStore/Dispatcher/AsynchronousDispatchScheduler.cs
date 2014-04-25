@@ -8,7 +8,7 @@ namespace NEventStore.Dispatcher
 
     public class AsynchronousDispatchScheduler : SynchronousDispatchScheduler
     {
-        private const int BoundedCapacity = 1024;
+        private const int BoundedCapacity = 10024; //Modification to increase the bounded capacity from 1024
         private static readonly ILog Logger = LogFactory.BuildLogger(typeof (AsynchronousDispatchScheduler));
         private readonly BlockingCollection<ICommit> _queue;
         private Task _worker;
